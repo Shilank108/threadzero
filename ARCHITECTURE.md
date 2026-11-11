@@ -504,7 +504,7 @@ flowchart TB
 
 ### A. Frontend Developers (2 Members — `assets/css/style.css`, `assets/js/app.js`, `includes/header.php`)
 
-* **Know how to explain:** How `assets/css/style.css` is organised (one commented section per page plus shared `.badge-anon`, `.badge-user`, `.greentext`, `.quote-link` and theme helpers), Flexbox layout, the mobile `@media (max-width: 600px)` block, how CSS custom properties plus `data-theme`/`localStorage` drive dark mode, HTML form `method="POST"` and `enctype="multipart/form-data"`, and how `includes/header.php`/`includes/footer.php` wrap every page.
+* **Know how to explain:** How `assets/css/style.css` is organised (one commented section per page plus shared `.badge-anon`, `.badge-user`, `.greentext`, `.quote-link` and theme helpers), Flexbox layout, the mobile `@media (max-width: 600px)` block, how CSS custom properties plus `data-theme`/`localStorage` drive dark mode, HTML form `method="POST"` and `enctype="multipart/form-data"`, and how `includes/header.php`/`includes/footer.php` wrap every page, how the navbar displays the Notifications link and unread count for logged-in users.
 * **Practice live changes:** Change a theme colour, move the navbar, add a minimum character length check in JS, or add a `confirm()` dialog on delete buttons.
 
 ### B. Backend Developers (2 Members — `auth.php`, `index.php`, `thread.php`, `profile.php`, `admin.php`, `notifications.php`)
