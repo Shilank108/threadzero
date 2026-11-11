@@ -504,12 +504,12 @@ flowchart TB
 
 ### A. Frontend Developers (2 Members — `assets/css/style.css`, `assets/js/app.js`, `includes/header.php`)
 
-* **Know how to explain:** How `assets/css/style.css` is organised (one commented section per page plus shared `.badge-anon`, `.badge-user`, `.greentext`, `.quote-link` and theme helpers), Flexbox layout, the mobile `@media (max-width: 600px)` block, how CSS custom properties plus `data-theme`/`localStorage` drive dark mode, HTML form `method="POST"` and `enctype="multipart/form-data"`, and how `includes/header.php`/`includes/footer.php` wrap every page,how notifications are created when another user replies, how the recipient's unread count is calculated, and how users manage their own notifications..
+* **Know how to explain:** How `assets/css/style.css` is organised (one commented section per page plus shared `.badge-anon`, `.badge-user`, `.greentext`, `.quote-link` and theme helpers), Flexbox layout, the mobile `@media (max-width: 600px)` block, how CSS custom properties plus `data-theme`/`localStorage` drive dark mode, HTML form `method="POST"` and `enctype="multipart/form-data"`, and how `includes/header.php`/`includes/footer.php` wrap every page.
 * **Practice live changes:** Change a theme colour, move the navbar, add a minimum character length check in JS, or add a `confirm()` dialog on delete buttons.
 
 ### B. Backend Developers (2 Members — `auth.php`, `index.php`, `thread.php`, `profile.php`, `admin.php`, `notifications.php`)
 
-* **Know how to explain:** PHP `$_SESSION` lifecycle and `session_regenerate_id(true)` after login, PDO prepared statements (`?` placeholders) vs. SQL injection, how `random_int()` creates the 16-digit token, why the DB stores `token_lookup` (HMAC-SHA256 with `APP_SECRET`) and a `password_hash()` instead of the raw token, how `renderAuthorBadge()` checks `$parentThread['is_anon']`, and how a request moves from a root controller through `config/`/`includes/` to MySQL (see the request-flow diagram in §5.1).
+* **Know how to explain:** PHP `$_SESSION` lifecycle and `session_regenerate_id(true)` after login, PDO prepared statements (`?` placeholders) vs. SQL injection, how `random_int()` creates the 16-digit token, why the DB stores `token_lookup` (HMAC-SHA256 with `APP_SECRET`) and a `password_hash()` instead of the raw token, how `renderAuthorBadge()` checks `$parentThread['is_anon']`, and how a request moves from a root controller through `config/`/`includes/` to MySQL (see the request-flow diagram in §5.1),how notifications are created when another user replies, how the recipient's unread count is calculated, and how users manage their own notifications.
 * **Practice live changes:** Adding a new field to the profile page, restricting an action to moderators only, or changing the `>greentext` regex character.
 
 ### C. Database Architect (1 Member — `schema.sql`, `seed.sql`, SQL Queries)
