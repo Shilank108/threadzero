@@ -260,7 +260,7 @@ erDiagram
 
 ## 4. Core Shared Code (`config/db.php` & `config/functions.php`)
 
-Every root page (`index.php`, `thread.php`, `auth.php`, `profile.php`, `admin.php`) includes these two files at the top. There are no static `.html` routes any more.
+Every root page (`index.php`, `thread.php`, `auth.php`, `profile.php`, `admin.php`, `notifications.php`) includes these two files at the top. There are no static `.html` routes any more.
 
 ### `config/db.php`
 
