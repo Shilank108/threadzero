@@ -21,6 +21,8 @@
   - **Rich Text Parsing:** Native support for `>greentext` quotes and clickable `>>1001` post reference anchors.
 - **🛡️ Moderation & Bookmarks:**
   - Built-in post flagging, thread pinning/locking, and personal thread bookmarks.
+- **🔔 Notifications System:**
+  - Automatically notifies thread owners when someone replies, with an unread count, dedicated inbox, mark-as-read controls and individual notification deletion.
 - **🌗 Dual Theme Engine:**
   - Instant switching between **Retro Light (Yotsuba)** and **Modern Dark (Tomorrow)** modes using CSS variables and `localStorage`.
 
