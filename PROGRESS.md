@@ -3,26 +3,26 @@
 **Project:** ThreadZero — Privacy-First Hybrid Discussion & Imageboard Engine
 **Stack:** HTML5, custom CSS3, Vanilla JS · PHP 8 (PDO) · MySQL / MariaDB
 **Type:** B.Tech Web Development Lab project (5-member team, 10–15 day timeline)
-**Last verified:** 6 Nov 2026 (repo scan of `C:\laragon\www\threadzero`, Modules 1–6 + demo seed implemented)
+**Last verified:** 11 Nov 2026 (repo scan of `C:\laragon\www\threadzero`, Modules 1–7 + demo seed implemented + notification flows manually tested locally)
 
 ---
 
 ## 1. Executive Summary
 
-> **"All six modules and the demo dataset are done; viva artefacts remain."**
+> **"All seven modules and the demo dataset are done; viva artefacts remain."**
 
-Modules 1–6 are implemented: dual authentication (`auth.php`), the 4-table schema (`sql/schema.sql`), the PDO/session layer (`config/db.php`), shared helpers (`config/functions.php`), the layout partials (`includes/`), the board feed (`index.php`), the full thread engine (`thread.php`), the profile dashboard (`profile.php`), the moderator panel (`admin.php`) and the light/dark theme engine (`assets/css/style.css` + `assets/js/app.js`). `sql/seed.sql` adds four demo accounts, six threads, seven replies, five bookmarks and two reported posts. The ER diagram (§3.3) and system request-flow diagram (§5.1) are in `ARCHITECTURE.md`. The remaining work is screenshots and deployment evidence.
+Modules 1–7 are implemented: dual authentication (`auth.php`), the 5-table schema (`sql/schema.sql`), the PDO/session layer (`config/db.php`), shared helpers (`config/functions.php`), the layout partials (`includes/`), the board feed (`index.php`), the full thread engine (`thread.php`), the profile dashboard (`profile.php`), the moderator panel (`admin.php`) and the light/dark theme engine (`assets/css/style.css` + `assets/js/app.js`). `sql/seed.sql` adds four demo accounts, six threads, seven replies, five bookmarks and two reported posts. The ER diagram (§3.3) and system request-flow diagram (§5.1) are in `ARCHITECTURE.md`. The notifications inbox and unread navbar count are implemented in notifications.php and includes/header.php. The remaining work is screenshots and deployment evidence.
 
 | Area | Completion |
 |---|---|
 | Planning / requirements | ~95% |
 | Design / architecture | ~100% |
-| Implementation | **~95%** (Modules 1–6 + foundation + demo seed) |
-| Testing / deployment | **~60%** (Modules 1–6 and the seed tested against MySQL) |
+| Implementation | **~95%** (Modules 1–7 + foundation + demo seed) |
+| Testing / deployment | **~60%** (Modules 1–7 and the seed tested against MySQL) |
 | Documentation / viva prep | ~90% |
 | **Overall project process** | **~90%** |
 
-**Verdict:** every feature module, the demo dataset and the architecture diagrams are complete and tested; only screenshots and deployment evidence remain.
+**Verdict:** All seven feature modules and the demo dataset are implemented. Modules 1–6 and the seed have been tested against MySQL; notification flows have also been manually tested locally. Full test evidence, screenshots and deployment evidence remain.
 
 ---
 
@@ -75,7 +75,7 @@ The spec drift has been settled. `ARCHITECTURE.md` is now the single source of t
 
 | Decision | Resolution |
 |---|---|
-| Table count | **4 tables** — `users`, `boards`, `posts`, `bookmarks` |
+| Table count | **5 tables** — `users`, `boards`, `posts`, `bookmarks`, `notifications` |
 | Reporting | Boolean flag `posts.is_reported`; no separate `reports` table |
 | CSS approach | **Hand-written CSS** in `assets/css/style.css`; Tailwind was dropped after the merged frontend PR (the prototypes use no framework) |
 | Frontend prototype | **No static HTML pages remain**; `login.html`, `register.html`, `index.html`, `thread.html` and `profile.html` were all folded into their PHP pages |
@@ -85,7 +85,7 @@ The spec drift has been settled. `ARCHITECTURE.md` is now the single source of t
 | Logout | `POST` with an `action=logout` field and CSRF token; the GET logout link was removed |
 | Form contract | Hidden `action` field (`signup`, `login`, `token_signup`, `token_login`, `logout`, `create_thread`, `post_reply`, `edit_post`, `delete_post`, `toggle_bookmark`, `report_post`, `update_bio`, `remove_bookmark`, `unflag`, `toggle_pin`, `toggle_lock`; `delete_post` is shared by authors and moderators) + CSRF token; full table in `ARCHITECTURE.md` §4.1 |
 | Spec file | `PROJECT_SPEC.md` removed on purpose — teammates use `ARCHITECTURE.md` + `README.md` |
-| Schema SQL file | ✅ Written — `sql/schema.sql` creates the 4 tables and seeds the boards; safe to re-run |
+| Schema SQL file | ✅ Written — `sql/schema.sql` creates the 5 tables and seeds the boards; safe to re-run |
 
 ---
 
@@ -94,15 +94,15 @@ The spec drift has been settled. `ARCHITECTURE.md` is now the single source of t
 | # | Step | Status | Detail |
 |---|---|---|---|
 | 1 | Idea / topic selection | ✅ Done | ThreadZero clearly defined |
-| 2 | Problem statement & requirements | ✅ Done | 6 modules, dual auth, asymmetric anonymity, bump/sage, moderation |
+| 2 | Problem statement & requirements | ✅ Done | 7 modules, dual auth, asymmetric anonymity, bump/sage, moderation |
 | 3 | Tech stack | ✅ Done | HTML5 / custom CSS3 / Vanilla JS, PHP 8 + PDO, MySQL |
 | 4 | Database design / ER schema | ✅ Done | 4 tables implemented in `sql/schema.sql` with FKs, `ON DELETE CASCADE`, unique keys and `AUTO_INCREMENT = 1001`; ER diagram in `ARCHITECTURE.md` §3.3 |
 | 5 | Wireframes / UI flow | ✅ Done | All static prototypes were converted into the real PHP pages; shared stylesheet retained |
 | 6 | Architecture diagram | ✅ Done | ER and system request-flow diagrams in `ARCHITECTURE.md` §3.3 and §5.1 (Mermaid) |
 | 7 | Environment / repo setup | ✅ Done | Git repo, `.gitignore`, Laragon setup documented; `config/`, `includes/`, `sql/` tracked |
-| 8 | Backend / API implementation | ✅ Done (Modules 1–6) | `auth.php`, `index.php`, `thread.php`, `profile.php` and `admin.php` implemented |
+| 8 | Backend / API implementation | ✅ Done (Modules 1–7) | `auth.php`, `index.php`, `thread.php`, `profile.php` and `admin.php` implemented |
 | 9 | Frontend implementation | ✅ Done | All five PHP pages have working views plus the light/dark theme toggle |
-| 10 | Integration / auth implementation | ✅ Done (Modules 1–6) | Sessions, dual login, CSRF, rate limiting, threads, replies, bookmarks, profiles, moderation and theming |
+| 10 | Integration / auth implementation | ✅ Done (Modules 1–7) | Sessions, dual login, CSRF, rate limiting, threads, replies, bookmarks, profiles, moderation and theming |
 | 11 | Testing | ⚠️ Partial | PHP lint passed; Modules 1–6 flows tested against MySQL; no automated test suite |
 | 12 | Deployment | ⚠️ Partial | Laragon steps documented, not yet executed end-to-end |
 | 13 | Documentation / presentation | ⚠️ Mostly | README + ARCHITECTURE + ER/request-flow diagrams + viva guide done; missing report, screenshots and deployment evidence |
