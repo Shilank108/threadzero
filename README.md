@@ -110,9 +110,9 @@ C:\laragon\bin\mysql\mysql-8.4.3-winx64\bin\mysql.exe -u root -e "source C:/lara
 
 ## 📋 Development Roadmap
 
-- [x] Architecture & 4-Table Schema Design (`ARCHITECTURE.md`)
+- [x] Architecture & 5-Table Schema Design (`ARCHITECTURE.md`)
 - [x] Static frontend prototypes (all folded into the PHP pages + `assets/css/style.css`)
-- [x] Database schema: `sql/schema.sql` (4 tables + default boards)
+- [x] Database schema: `sql/schema.sql` (5 tables + default boards)
 - [x] Core config & shared partials (`config/`, `includes/`)
 - [x] Module 1: Dual Authentication & 16-Digit Token Generator (`auth.php`)
 - [x] Module 2: Board Feed, Search, Sort & Thread Creation (`index.php`)
