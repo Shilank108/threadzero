@@ -61,8 +61,8 @@ threadzero/
 ├── admin.php                # Mod panel: reported queue, pin/lock, delete
 ├── ARCHITECTURE.md          # Full technical spec for devs & AI assistants
 ├── README.md                # Project overview & setup instructions
-└── PROGRESS.md              # Live build tracker & module completion log
 ├── notifications.php        # Notification inbox, mark as read & delete
+└── PROGRESS.md              # Live build tracker & module completion log
 ```
 
 ---
