@@ -476,6 +476,7 @@ flowchart TB
         THREAD["thread.php (Module 3: Replies, Bump/Sage, Edit/Delete)"]
         PROFILE["profile.php (Module 4: Bio Update & Saved Bookmarks)"]
         ADMIN["admin.php (Module 5: Mod Queue, Pin/Lock/Delete)"]
+        NOTIFICATIONS["notifications.php (Module 7: Inbox, Read/Delete)"]
     end
 
     subgraph Core ["Shared Foundation (config/ & includes/)"]
@@ -485,7 +486,7 @@ flowchart TB
     end
 
     subgraph Storage ["Persistence Layer"]
-        MYSQL[("MySQL: threadzero\n(users, boards, posts, bookmarks)")]
+        MYSQL[("MySQL: threadzero\n(users, boards, posts, bookmarks, notifications)")]
         UPLOADS[("assets/uploads/\n(Validated Images + .htaccess)")]
     end
 
