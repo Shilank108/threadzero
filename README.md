@@ -55,7 +55,7 @@ threadzero/
 │   └── footer.php           # Shared footer
 ├── sql/
 │   ├── schema.sql           # 5-table schema + default boards (re-runnable)
-│   └── seed.sql             # Demo users, threads, replies, bookmarks, reports & notifications
+│   └── seed.sql             # Demo users, threads, replies, bookmarks & reports 
 ├── index.php                # Board feed, search, sort & new-thread form
 ├── thread.php               # Thread view: replies, bump/sage, edit/delete, bookmark, report
 ├── auth.php                 # Dual login/signup + 16-digit token generator
